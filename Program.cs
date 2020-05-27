@@ -23,6 +23,20 @@ namespace Solution
                 {
                     var context = services.GetRequiredService<DataContext>();
                     context.Database.Migrate();
+                    bool hasAdmin = false;
+                    foreach(var item in context.Superusers)
+                    {
+                        if(item.Name == "admin-root")
+                        {
+                            hasAdmin = true;
+                            break;
+                        }
+                    }
+                    if(!hasAdmin)
+                    {
+                        context.Superusers.Add(new Superuser{ Name = "admin-root", Password = "root01"});
+                        context.SaveChanges();
+                    }
                 }
                 catch (Exception ex)
                 {

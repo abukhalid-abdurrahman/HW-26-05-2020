@@ -34,6 +34,23 @@ namespace Solution.Controllers
         [HttpPost]
         public IActionResult Login(Superuser superuser)
         {
+            bool hasLoged = false;
+            foreach(var item in dbContext.Superusers)
+            {
+                if(superuser.Name == item.Name && superuser.Password == item.Password)
+                {
+                    hasLoged = true;
+                    break;
+                }
+            }
+            if(hasLoged)
+                return Redirect("~/Home/Administration");
+            else
+                return View();
+        }
+
+        public IActionResult Administration()
+        {
             return View();
         }
 
