@@ -20546,8 +20546,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\Home\\Login.cshtml",
+      "TargetPath": "Views\\Home\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\Home\\Administration.cshtml",
+      "TargetPath": "Views\\Home\\Administration.cshtml",
       "FileKind": "mvc"
     },
     {
