@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Product>
+@{
     ViewData["Title"] = "Главная";
 }
 
@@ -8,5 +9,23 @@
 </div>
 
 <div class="product-list">
-
+    <div class="card-columns">
+        @foreach (var item in Model)
+        {
+            <div class="card p-3">
+                <blockquote class="blockquote mb-0 card-body">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name - @item.ProductCategory</h5>
+                        <p class="card-text">@item.Description</p>
+                    </div>
+                    <footer class="blockquote-footer">
+                        <small class="text-muted">
+                            <cite title="Source Title">Цена: @item.Cost</cite>
+                        </small>
+                    </footer>
+                    <a href="#" class="btn btn-primary">Купить</a>
+                </blockquote>
+            </div>
+        }
+    </div>
 </div>

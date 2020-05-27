@@ -11,22 +11,18 @@ namespace Solution.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(){}
+        DataContext dbContext;
+        public HomeController(DataContext context){ dbContext = context; }
 
         public IActionResult Index()
         {
-            return View();
+            return View(dbContext.Products.ToList());
         }
 
         [HttpPost]
         public IActionResult Index(string requset)
         {
             //TODO: Search Product
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
             return View();
         }
 
@@ -37,6 +33,11 @@ namespace Solution.Controllers
 
         [HttpPost]
         public IActionResult Login(Superuser superuser)
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
         {
             return View();
         }
