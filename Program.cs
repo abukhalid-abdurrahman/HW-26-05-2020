@@ -22,21 +22,21 @@ namespace Solution
                 try
                 {
                     var context = services.GetRequiredService<DataContext>();
-                    context.Database.Migrate();
                     bool hasAdmin = false;
-                    foreach(var item in context.Superusers)
+                    foreach (var item in context.Superusers)
                     {
-                        if(item.Name == "admin-root")
+                        if (item.Name == "admin-root")
                         {
                             hasAdmin = true;
                             break;
                         }
                     }
-                    if(!hasAdmin)
+                    if (!hasAdmin)
                     {
-                        context.Superusers.Add(new Superuser{ Name = "admin-root", Password = "root01"});
+                        context.Superusers.Add(new Superuser { Name = "admin-root", Password = "root01" });
                         context.SaveChanges();
                     }
+                    context.Database.Migrate();
                 }
                 catch (Exception ex)
                 {

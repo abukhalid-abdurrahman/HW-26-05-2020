@@ -1,3 +1,4 @@
+@model IEnumerable<Product>
 @{
     Layout = null;
 }
@@ -40,14 +41,15 @@
             </div>
         </nav>
     <div class="container">
-        <hr>
-            <form class="form-inline my-2 my-lg-0" method="POST">
-                <input class="form-control mr-sm-2" type="text" placeholder="Имя продукта" name="Name">
-                <input class="form-control mr-sm-2" type="text" placeholder="Описание продукта" name="Description">
-                <input class="form-control mr-sm-2" type="text" placeholder="Категория продукта" name="ProductCategory">
-                <input class="form-control mr-sm-2" type="number" placeholder="Цена продукта" name="Cost">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Добавить</button>
-            </form>
+        @foreach (var item in Model)
+        {
+            <hr>
+                <form class="form-inline my-2 my-lg-0" method="POST">
+                    <input class="form-control mr-sm-2 disabled" type="number" value="@item.Id" name="Id">
+                    <input class="form-control mr-sm-2" type="text" value="@item.Name" name="Name">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Удалить</button>
+                </form>   
+        }
         <hr>
             <footer style="display: block;">
                 <p>© 2020 - Faha Shop Industries. All Rights Reserved</p>

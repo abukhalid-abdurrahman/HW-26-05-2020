@@ -19,13 +19,6 @@ namespace Solution.Controllers
             return View(dbContext.Products.ToList());
         }
 
-        [HttpPost]
-        public IActionResult Index(string requset)
-        {
-            //TODO: Search Product
-            return View();
-        }
-
         public IActionResult Login()
         {
             return View();
@@ -48,12 +41,71 @@ namespace Solution.Controllers
             else
                 return View();
         }
+        public IActionResult ProductList()
+        {
+            return View(dbContext.Products.ToList());
+        }
+
+        public IActionResult Category()
+        {
+            return View(dbContext);
+        }
+
+        [HttpPost]
+        public IActionResult Category(Category category)
+        {
+            if(category != null)
+            {
+                dbContext.Categorys.Add(category);
+                dbContext.SaveChanges();
+            }
+            return View(dbContext);
+        }
 
         public IActionResult Administration()
         {
             return View();
         }
-
+        [HttpPost]
+        public IActionResult Administration(Product product)
+        {
+            if(product != null)
+            {
+                dbContext.Products.Add(product);
+                dbContext.SaveChanges();
+            }
+            return View();
+        }
+        public IActionResult EditProduct()
+        {
+            return View(dbContext.Products.ToList());
+        }
+        [HttpPost]
+        public IActionResult EditProduct(Product product)
+        {
+            if(product != null)
+            {
+                var productEdited = dbContext.Products.Find(product.Id);
+                productEdited.Name = product.Name;
+                productEdited.Description = product.Description;
+                productEdited.ProductCategory = product.ProductCategory;
+                productEdited.Cost = product.Cost;
+                dbContext.SaveChanges();
+            }
+            return View(dbContext.Products.ToList());
+        }
+        [HttpPost]
+        public IActionResult RemoveProduct(int? Id, string Name)
+        {
+            var productDeleted = dbContext.Products.Find(Id);
+            dbContext.Products.Remove(productDeleted);
+            dbContext.SaveChanges();
+            return View(dbContext.Products.ToList());
+        }
+        public IActionResult RemoveProduct()
+        {
+            return View(dbContext.Products.ToList());
+        }
         public IActionResult Privacy()
         {
             return View();

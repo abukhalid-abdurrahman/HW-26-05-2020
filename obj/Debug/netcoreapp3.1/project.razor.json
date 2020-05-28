@@ -20526,6 +20526,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\Home\\ProductList.cshtml",
+      "TargetPath": "Views\\Home\\ProductList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -20546,13 +20551,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\Home\\Category.cshtml",
+      "TargetPath": "Views\\Home\\Category.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\Home\\Login.cshtml",
       "TargetPath": "Views\\Home\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\Home\\EditProduct.cshtml",
+      "TargetPath": "Views\\Home\\EditProduct.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Views\\Home\\RemoveProduct.cshtml",
+      "TargetPath": "Views\\Home\\RemoveProduct.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -77,3 +77,7 @@ C:\Users\Faridun\Allif Academy\Day 27\Solution\obj\Debug\netcoreapp3.1\Solution.
 C:\Users\Faridun\Allif Academy\Day 27\Solution\obj\Debug\netcoreapp3.1\Solution.genruntimeconfig.cache
 C:\Users\Faridun\Allif Academy\Day 27\Solution\obj\Debug\netcoreapp3.1\Razor\Views\Home\Administration.cshtml.g.cs
 C:\Users\Faridun\Allif Academy\Day 27\Solution\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\Faridun\Allif Academy\Day 27\Solution\obj\Debug\netcoreapp3.1\Razor\Views\Home\Category.cshtml.g.cs
+C:\Users\Faridun\Allif Academy\Day 27\Solution\obj\Debug\netcoreapp3.1\Razor\Views\Home\EditProduct.cshtml.g.cs
+C:\Users\Faridun\Allif Academy\Day 27\Solution\obj\Debug\netcoreapp3.1\Razor\Views\Home\ProductList.cshtml.g.cs
+C:\Users\Faridun\Allif Academy\Day 27\Solution\obj\Debug\netcoreapp3.1\Razor\Views\Home\RemoveProduct.cshtml.g.cs

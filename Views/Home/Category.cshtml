@@ -1,3 +1,4 @@
+@model DataContext
 @{
     Layout = null;
 }
@@ -6,7 +7,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Администрация</title>
+    <title>Администрация - Категория</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -42,16 +43,27 @@
     <div class="container">
         <hr>
             <form class="form-inline my-2 my-lg-0" method="POST">
-                <input class="form-control mr-sm-2" type="text" placeholder="Имя продукта" name="Name">
-                <input class="form-control mr-sm-2" type="text" placeholder="Описание продукта" name="Description">
-                <input class="form-control mr-sm-2" type="text" placeholder="Категория продукта" name="ProductCategory">
-                <input class="form-control mr-sm-2" type="number" placeholder="Цена продукта" name="Cost">
+                <input class="form-control mr-sm-2" type="text" placeholder="Имя категории" name="Name">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Добавить</button>
             </form>
-        <hr>
-            <footer style="display: block;">
-                <p>© 2020 - Faha Shop Industries. All Rights Reserved</p>
-            </footer>
+            @foreach (var item in Model.Categorys)
+            {
+                <hr>
+                <p>@item.Name :</p>
+                <ul>
+                @foreach(var it in Model.Products)
+                {
+                    @if(it.ProductCategory == item.Name)
+                    {
+                        <li>@it.Name</li>
+                    }
+                }
+                </ul>
+            }
+    <hr>
+        <footer style="display: block;">
+            <p>© 2020 - Faha Shop Industries. All Rights Reserved</p>
+        </footer>
     </div>
 </body>
 </html>
