@@ -1,3 +1,4 @@
+@model DataContext
 @{
     Layout = null;
 }
@@ -44,7 +45,14 @@
             <form class="form-inline my-2 my-lg-0" method="POST">
                 <input class="form-control mr-sm-2" type="text" placeholder="Имя продукта" name="Name">
                 <input class="form-control mr-sm-2" type="text" placeholder="Описание продукта" name="Description">
-                <input class="form-control mr-sm-2" type="text" placeholder="Категория продукта" name="ProductCategory">
+                <select class="form-control mr-sm-2" name="categoryId">
+                    <option selected disabled>Выберите категорию</option>
+                    @foreach(var item in Model.Categorys)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                    <span asp-validation-for="Categorys"></span>
+                </select>
                 <input class="form-control mr-sm-2" type="number" placeholder="Цена продукта" name="Cost">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Добавить</button>
             </form>

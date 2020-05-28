@@ -16,7 +16,7 @@ namespace Solution.Controllers
 
         public IActionResult Index()
         {
-            return View(dbContext.Products.ToList());
+            return View(dbContext);
         }
 
         public IActionResult Login()
@@ -43,7 +43,7 @@ namespace Solution.Controllers
         }
         public IActionResult ProductList()
         {
-            return View(dbContext.Products.ToList());
+            return View(dbContext);
         }
 
         public IActionResult Category()
@@ -64,35 +64,38 @@ namespace Solution.Controllers
 
         public IActionResult Administration()
         {
-            return View();
+            return View(dbContext);
         }
         [HttpPost]
-        public IActionResult Administration(Product product)
+        public IActionResult Administration(Product product, int categoryId)
         {
             if(product != null)
             {
+                var selectedCategory = dbContext.Categorys.Find(categoryId);
+                product.ProductCategory = selectedCategory;
                 dbContext.Products.Add(product);
                 dbContext.SaveChanges();
             }
-            return View();
+            return View(dbContext);
         }
         public IActionResult EditProduct()
         {
-            return View(dbContext.Products.ToList());
+            return View(dbContext);
         }
         [HttpPost]
-        public IActionResult EditProduct(Product product)
+        public IActionResult EditProduct(Product product, int categoryId)
         {
             if(product != null)
             {
+                var selectedCategory = dbContext.Categorys.Find(categoryId);
                 var productEdited = dbContext.Products.Find(product.Id);
                 productEdited.Name = product.Name;
                 productEdited.Description = product.Description;
-                productEdited.ProductCategory = product.ProductCategory;
+                productEdited.ProductCategory = selectedCategory;
                 productEdited.Cost = product.Cost;
                 dbContext.SaveChanges();
             }
-            return View(dbContext.Products.ToList());
+            return View(dbContext);
         }
         [HttpPost]
         public IActionResult RemoveProduct(int? Id, string Name)

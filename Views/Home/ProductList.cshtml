@@ -1,4 +1,4 @@
-@model IEnumerable<Product>
+@model DataContext
 @{
     Layout = null;
 }
@@ -43,7 +43,7 @@
     <div class="container">
         <hr>
             <div class="card-columns">
-                @foreach (var item in Model)
+                @foreach (var item in Model.Products)
                 {
                     <div class="card p-3">
                         <blockquote class="blockquote mb-0 card-body">
